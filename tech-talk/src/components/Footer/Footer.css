@@ -6,4 +6,9 @@
     bottom: 0;
     width: 100%;
     color: #6d75ce;
+    background-color: #6270ef;
+}
+.footer a{
+    background-color: #6270ef;
+    color: white;   
 }
