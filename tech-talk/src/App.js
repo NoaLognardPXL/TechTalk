@@ -1,5 +1,6 @@
 import './App.css';
 import TodoList from './components/TodoList/TodoList';
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       {/* need to add it for the demo */}
       <TodoList />
+        <Footer />
     </div>
   );
 }

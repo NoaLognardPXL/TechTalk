@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./TodoList.css";
-import TodoItem from "../todoItem/todoItem";
+import TodoItem from "../TodoItem/TodoItem";
 
 function TodoList() {
 
@@ -20,6 +20,8 @@ function TodoList() {
     const [text, setText] = useState('');
 
     function addTask(text) {
+        if (text === '') return;
+
         const newTask = {
             id: Date.now(),
             text,
