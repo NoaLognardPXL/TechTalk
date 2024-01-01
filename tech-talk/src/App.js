@@ -10,6 +10,7 @@ function App() {
       </header>
       {/* need to add it for the demo */}
       <TodoList />
+        {/*this needs to be added for the demo*/}
         <Footer />
     </div>
   );
