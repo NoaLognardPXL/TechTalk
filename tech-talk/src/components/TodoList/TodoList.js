@@ -1,24 +1,35 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
 import "./TodoList.css";
 import TodoItem from "../TodoItem/TodoItem";
 
+//don't forget to import the useState
+
 function TodoList() {
+    //useState example
+    //const [state, setState] = useState(0);
 
-    const [tasks, setTasks] = useState([
-        {
-            id: 1,
-            text: 'Doctor Appointment',
-            completed: true
-        },
-        {
-            id: 2,
-            text: 'Meeting at School',
-            completed: false
-        }
-    ]);
-    const [text, setText] = useState('');
+    //add state here for the tasks (array)
+    //state = tasks
+    //setState = setTasks
 
+    //add state here for the text of the new task (string)
+    //state = text
+    //setState = setText
+
+
+    useEffect(() => {
+        //let's add 3 tasks
+
+        //call the setTasks function with the new array of tasks objects
+        //each task should have the following properties:
+        //id: unique number
+        //text: the text of the task
+        //completed: false
+
+    }, []);
+     
+    // uncomment after the tasks and text state is added
+    /*
     function addTask(text) {
         if (text === '') return;
 
@@ -27,6 +38,7 @@ function TodoList() {
             text,
             completed: false
         };
+        
         setTasks([...tasks, newTask]);
     }
 
@@ -42,32 +54,45 @@ function TodoList() {
             return task;
         }));
     }
+    */
+        
 
     return (
         <div className="todo-container">
 
             <div className="todo-input-container">
-                <input type="text" value={text} onChange={e => setText(e.target.value)} />
-                <button onClick={() => addTask(text)}>Add Task</button>
+                {/* remove the comments in the input and button after adding the useState at the top */}
+                <input type="text" /* value={text} onChange={e => setText(e.target.value)} */ />
+                <button /* onClick={() => addTask(text)} */ >Add Task</button>
             </div>
+
             <div className="todo-list">
-
-                {/*
-            tasks.map(task => (
-                <li key={task.id}>
-                <input type="checkbox" 
-                id={task.id} 
-                checked={task.completed} 
-                onChange={() => toggleTaskCompleted(task.id)} />
-                <label htmlFor={task.id}>{task.text}</label>
-                <button onClick={() => deleteTask(task.id)}>X</button>
-                </li>
-                ))
-                */
+                {
+                    // uncomment after the tasks and text state is added
+                    /*
                     tasks.map(task => (
-                        <TodoItem key={task.id} task={task} deleteTask={deleteTask} toggleCompleted={toggleTaskCompleted} />
+                        <li key={task.id}>
+                        <input type="checkbox" 
+                        id={task.id} 
+                        checked={task.completed} 
+                        onChange={() => toggleTaskCompleted(task.id)} />
+                        <label htmlFor={task.id}>{task.text}</label>
+                        <button onClick={() => deleteTask(task.id)}>X</button>
+                        </li>
                     ))
-
+                    */
+                    
+                
+                    // uncomment when we added the props to the TodoItem component
+                    // add the props to the TodoItem component after task={task}
+                    // pass the deleteTask function as a prop to the TodoItem component
+                    // pass the toggleTaskCompleted function as a prop to the TodoItem component
+                    /*
+                    tasks.map(task => (
+                        <TodoItem key={task.id} task={task} />
+                    ))
+                    */        
+                
                 }
             </div>
         </div>

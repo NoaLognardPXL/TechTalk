@@ -47,3 +47,7 @@ input[type = "text"] {
     border-radius: 5px;
     margin-bottom: 8px;
 }
+
+li {
+    list-style-type: none;
+}
